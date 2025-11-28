@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+color:#76a9e7;
+background-color: rgb(149, 203, 242);
+line-height: 1.6;
+padding: 10px;
+font-size: 16px;
+padding-top: 20px;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+h1,h2,h3 {
+    color: #0e0d0d;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+    color: #2a10ef;
+    font-size: 1rem;
+}
+
+article {
+    background-color: rgb(230, 232, 237);
+    border: 1px solid #e9ecf0;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    flex: 2;
+}
+
+aside {
+    flex: 1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid-container .item {
+    background-color: rgb(230, 231, 244);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.grid-container .item:hover {
+    transform: translatey(-5px);
+    background-color: #446edb;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+@media (max-width: 480px) {
+    body {
+        background-color: #76a9e7;
+    }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    main {
+        flex-direction: column;
+    }
+}
+@media (min-width:768px) {
+    main {
+        flex-direction: row;
+    }
+}
+@media (min-width:1024px) {
+    main {
+        max-width: 1200px;
+        margin: auto;
+    }
+    body {
+        font-size: 18px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+nav{
+    transition: 0,3 ease;
+}
+
+nav.show-nav {
+    opacity: 1;
+    pointer-events: auto;
+}
+nav {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.dark{
+    background-color: #222;
+    color: #eee;
+}
+
+body.dark nav a {
+    color: #fff;
+}
+
+header:hover {
+    background-color: #88b9ea;
+    transition: background-color 0.3s ease;
+}
+
+nav ul {
+    font-size: 18px;
+    transition: font-size 0.3s ease;
+}
